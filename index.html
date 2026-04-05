@@ -248,6 +248,120 @@
             flex: 1;
         }
 
+        /* --- Pitch Summary Timeline --- */
+        #pitch-summary {
+            padding: var(--spacing-xl) 5%;
+            background-color: var(--surface); /* Keeps the background clean */
+            display: flex;
+            justify-content: center;
+        }
+
+        .timeline-wrapper {
+            position: relative;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        /* The vertical connecting line */
+        .timeline-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            bottom: 20px;
+            left: 38px; /* Centers the line behind the 80px dots */
+            width: 4px;
+            background-color: #E2E8F0;
+            z-index: 1;
+            border-radius: 4px;
+        }
+
+        .timeline-item {
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 3.5rem;
+            z-index: 2;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-right: 2.5rem;
+            border: 6px solid var(--surface); /* Creates a clean cutout effect against the line */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Extracting your exact brand colors from the flyer */
+        .dot-green { background-color: #A9D18E; } 
+        .dot-yellow { background-color: #FFD966; } 
+        .dot-pink { background-color: #F4B183; } 
+        .dot-purple { background-color: #B4A7D6; } 
+        .dot-mint { background-color: #A2C4C9; } 
+
+        .timeline-content {
+            flex: 1;
+            padding-top: 10px; /* Aligns text visually with the center of the dot */
+        }
+
+        .timeline-content h3 {
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Matching the heading text color to the corresponding dot */
+        .item-green h3 { color: #81A965; }
+        .item-yellow h3 { color: #D1AB38; }
+        .item-pink h3 { color: #D88F5E; }
+        .item-purple h3 { color: #8F81B5; }
+        .item-mint h3 { color: #729EA4; }
+
+        .timeline-content p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .timeline-content ul {
+            padding-left: 1.5rem;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .timeline-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content strong {
+            color: var(--text-dark);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            .timeline-wrapper::before { 
+                left: 28px; /* Re-center line for smaller dots */
+            }
+            .timeline-dot {
+                width: 60px;
+                height: 60px;
+                border-width: 4px;
+                margin-right: 1.5rem;
+            }
+            .timeline-content h3 { 
+                font-size: 1.1rem; 
+                margin-top: 0;
+            }
+        }
+
         /* --- Founder's Note --- */
         #founder {
             padding: var(--spacing-xl) 5%;
@@ -407,6 +521,58 @@
             <p>Utilizing premium freeze-dried ingredients like Moringa, Ashwagandha, and Shiitake, this shelf-stable kit provides immediate cognitive clarity and joint lubrication. Just add hot water and ghee.</p>
             <br>
             <a href="https://dineshav05.github.io/achala-alpha-test/" class="btn btn-primary">Join the Alpha Test Waitlist</a>
+        </div>
+    </section>
+
+    <section id="pitch-summary">
+        <div class="timeline-wrapper">
+            
+            <div class="timeline-item item-green">
+                <div class="timeline-dot dot-green"></div>
+                <div class="timeline-content">
+                    <h3>What Does It Stand For?</h3>
+                    <p>It stands for the "Purposeful Pause." In a world where everyone is overworked, over-screened, and under-nourished, this broth stands for putting real, ancient healing back into the modern daily routine without adding friction to a busy day.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item item-yellow">
+                <div class="timeline-dot dot-yellow"></div>
+                <div class="timeline-content">
+                    <h3>What Is It?</h3>
+                    <p>It is a 100% vegetarian, instant healing soup. Traditional "bone broths" are famous for repairing joints and gut health, but they require boiling meat for 24 hours. We have recreated that exact same thick, comforting texture and deep nutritional benefit using purely plant-based Ayurvedic superfoods—like freeze-dried Moringa (drumstick), Ashwagandha, and Shiitake mushrooms. You just add hot water, steep for 3 minutes, add a spoon of ghee, and it's ready.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item item-pink">
+                <div class="timeline-dot dot-pink"></div>
+                <div class="timeline-content">
+                    <h3>How Does It Impact People's Lives?</h3>
+                    <p>It actively repairs the body rather than just stimulating it. When people hit that 4:00 PM afternoon slump, they usually reach for coffee or sugary chai. That spikes cortisol (stress) and leads to a crash. This broth does the exact opposite: it calms the nervous system, clears brain fog, lubricates dry/stiff joints, and restores deep cellular energy (Ojas). It turns a stressful afternoon into a grounding, nourishing ritual.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item item-purple">
+                <div class="timeline-dot dot-purple"></div>
+                <div class="timeline-content">
+                    <h3>Why Do We Have To Use It?</h3>
+                    <p>Because modern fatigue is a nutritional crisis, not just a sleep crisis. Coffee only masks exhaustion; it doesn't fix the underlying depletion. We have to use this because our bodies need a daily, accessible way to repair tissue, soothe the gut, and calm the mind in the middle of the workday.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item item-mint">
+                <div class="timeline-dot dot-mint"></div>
+                <div class="timeline-content">
+                    <h3>Added Value Health Benefits</h3>
+                    <ul>
+                        <li><strong>Highly Functional:</strong> Actively fights stress, joint pain, and digestive issues.</li>
+                        <li><strong>Zero Friction:</strong> Ready in 3 minutes. No cooking required.</li>
+                        <li><strong>Shelf-Stable:</strong> Can be kept at a desk or in a bag; it doesn't spoil like liquid soups.</li>
+                        <li><strong>100% Vegetarian/Cruelty-Free:</strong> Gives the benefits of a meat broth to vegans and vegetarians.</li>
+                        <li><strong>Clean Energy:</strong> Provides sustained focus without the caffeine jitters.</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </section>
 
