@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon | Achala Organics</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- Brand Variables --- */
+        :root {
+            --primary: #3A4A29;      /* Deep Earthy Green */
+            --background: #FAFAF7;   /* Warm Cream */
+            --surface: #FFFFFF;
+            --text-dark: #2C3524;
+            --text-muted: #6B7264;
+            --accent: #D4A373;       /* Earthy Gold */
+            --border: #D1D1D1;
+            
+            --font-h1: 'Playfair Display', serif;
+            --font-sub: 'Montserrat', sans-serif;
+            --font-body: 'Lato', sans-serif;
+        }
+
+        /* --- Global Reset --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--background);
+            color: var(--text-dark);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            /* Subtle textured background or gradient */
+            background-image: linear-gradient(135deg, rgba(250, 250, 247, 1) 0%, rgba(235, 238, 230, 1) 100%);
+        }
+
+        /* --- Layout --- */
+        .wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 5%;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* --- Typography --- */
+        .logo {
+            font-family: var(--font-sub);
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary);
+            position: absolute;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .badge {
+            font-family: var(--font-sub);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-family: var(--font-h1);
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1.1;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+        }
+
+        p.description {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+
+        /* --- Waitlist Form --- */
+        .waitlist-form {
+            width: 100%;
+            max-width: 450px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .input-group {
+            display: flex;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(58, 74, 41, 0.08);
+            border-radius: 50px;
+            background: var(--surface);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: border-color 0.3s ease;
+        }
+
+        .input-group:focus-within {
+            border-color: var(--primary);
+        }
+
+        input[type="email"] {
+            flex: 1;
+            border: none;
+            padding: 1rem 1.5rem;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            outline: none;
+            background: transparent;
+        }
+
+        button {
+            background-color: var(--primary);
+            color: var(--surface);
+            border: none;
+            padding: 1rem 2rem;
+            font-family: var(--font-sub);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2C3524;
+        }
+
+        .form-footer {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* --- Mobile Adjustments --- */
+        @media (max-width: 600px) {
+            .input-group {
+                flex-direction: column;
+                border-radius: 12px;
+                background: transparent;
+                box-shadow: none;
+                border: none;
+                gap: 0.5rem;
+            }
+            input[type="email"] {
+                border-radius: 8px;
+                border: 1px solid var(--border);
+                background: var(--surface);
+            }
+            button {
+                border-radius: 8px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo">Achala Organics</div>
+
+    <div class="wrapper">
+        <div class="badge">The Ecosystem is Loading</div>
+        
+        <h1>The Purposeful Pause is Coming.</h1>
+        
+        <p class="description">
+            We are bridging 15 years of IT innovation with tech-backed Ayurvedic wellness. Join the exclusive waitlist to be the first to access our Alpha Restorative Broths and AI diagnostic tools.
+        </p>
+
+        <form class="waitlist-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+            <div class="input-group">
+                <input type="email" name="email" placeholder="Enter your email address" required>
+                <button type="submit">Join Waitlist</button>
+            </div>
+            <div class="form-footer">No spam. Just updates on our launch and Alpha Test invites.</div>
+        </form>
+    </div>
+
+    <footer>
+        &copy; 2026 Achala Enterprises. All rights reserved.
+    </footer>
+
+</body>
+</html>
