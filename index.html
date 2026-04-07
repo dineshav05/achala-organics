@@ -185,7 +185,7 @@
             font-size: 1rem;
         }
 
-        /* --- The Ecosystem Grid --- */
+       /* --- The Ecosystem Grid --- */
         #ecosystem {
             padding: var(--spacing-xl) 5%;
         }
@@ -201,12 +201,17 @@
             gap: 2rem;
         }
 
+        /* Upgraded: Card is now a flex column and a clickable anchor */
         .brand-card {
             background-color: var(--surface);
             border-radius: 12px;
             padding: 2.5rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
         }
 
         .brand-card:hover {
@@ -219,7 +224,8 @@
             margin-bottom: 0.5rem;
         }
 
-        .brand-card span {
+        /* Renamed to category to avoid targeting all spans globally */
+        .brand-card span.category {
             display: inline-block;
             font-size: 0.85rem;
             text-transform: uppercase;
@@ -227,6 +233,34 @@
             color: var(--accent);
             margin-bottom: 1rem;
             font-weight: 600;
+        }
+
+        /* Upgraded: Pushes the CTA to the bottom uniformly */
+        .brand-card p {
+            flex-grow: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        /* New: Inline Card CTA with animated arrow */
+        .card-cta {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+        }
+
+        /* The arrow slides right when the card is hovered */
+        .brand-card:hover .card-cta {
+            gap: 0.8rem;
+        }
+
+        /* New: Main section footer for the global CTA */
+        .section-footer {
+            text-align: center;
+            margin-top: 3.5rem;
         }
 
         /* --- Product Spotlight --- */
@@ -472,42 +506,58 @@
         </div>
     </section>
 
-    <section id="ecosystem">
+   <section id="ecosystem">
         <div class="section-header">
             <h2>A Holistic Approach to Wellbeing</h2>
             <p>Explore our diverse portfolio of wellness rituals, AI tech tools, and lifestyle brands.</p>
         </div>
+        
         <div class="grid-container">
-            <div class="brand-card">
-                <span>Nutrition & Rituals</span>
+            <a href="#achala-living" class="brand-card">
+                <span class="category">Nutrition & Rituals</span>
                 <h3>Achala Living & Organics</h3>
                 <p>100% vegetarian, functionally potent Restorative Broths and organic dietary protocols for daily vitality.</p>
-            </div>
-            <div class="brand-card">
-                <span>Health Tech AI</span>
+                <span class="card-cta">Explore Rituals &rarr;</span>
+            </a>
+            
+            <a href="#keshscan" class="brand-card">
+                <span class="category">Health Tech AI</span>
                 <h3>Achala KeshScan</h3>
                 <p>An advanced, AI-powered web application providing instant, personalized hair loss analysis and protocols.</p>
-            </div>
-            <div class="brand-card">
-                <span>Maternal Care AI</span>
+                <span class="card-cta">Try the Scanner &rarr;</span>
+            </a>
+            
+            <a href="#postpartum-gpt" class="brand-card">
+                <span class="category">Maternal Care AI</span>
                 <h3>Postpartum Guide GPT</h3>
                 <p>Targeted, empathetic AI assistance focusing on maternal recovery, emotional well-being, and Ayurvedic postpartum nutrition.</p>
-            </div>
-            <div class="brand-card">
-                <span>Lifestyle Tech</span>
+                <span class="card-cta">Meet the Guide &rarr;</span>
+            </a>
+            
+            <a href="#lens-ai" class="brand-card">
+                <span class="category">Lifestyle Tech</span>
                 <h3>Lens AI Gem Tool</h3>
                 <p>Intersecting artificial intelligence with lifestyle aesthetics for personalized gemological and energy recommendations.</p>
-            </div>
-            <div class="brand-card">
-                <span>Apparel & Style</span>
+                <span class="card-cta">Discover Gems &rarr;</span>
+            </a>
+            
+            <a href="#silkstone" class="brand-card">
+                <span class="category">Apparel & Style</span>
                 <h3>Silkstone</h3>
                 <p>Curated, premium textiles and lifestyle apparel grounded in organic textures and mindful design.</p>
-            </div>
-            <div class="brand-card">
-                <span>Personal Expression</span>
+                <span class="card-cta">View Collection &rarr;</span>
+            </a>
+            
+            <a href="#stylemanntra" class="brand-card">
+                <span class="category">Personal Expression</span>
                 <h3>Stylemanntra</h3>
                 <p>A modern approach to personal styling, blending contemporary aesthetics with enduring, mindful fashion principles.</p>
-            </div>
+                <span class="card-cta">Find Your Style &rarr;</span>
+            </a>
+        </div>
+
+        <div class="section-footer">
+            <a href="#full-ecosystem" class="btn btn-outline" style="color: var(--primary); border-color: var(--primary);">View the Complete Ecosystem</a>
         </div>
     </section>
 
